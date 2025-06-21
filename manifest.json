@@ -1,10 +1,10 @@
 {
   "name": "UTS",
   "short_name": "UTS",
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0277bd",
+  "background_color": "#ff6f00",
+  "theme_color": "#ff6f00",
   "icons": [
     {
       "src": "icon-192.png",
