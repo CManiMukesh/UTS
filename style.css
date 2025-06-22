@@ -1,0 +1,68 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background: linear-gradient(to right, #f85700, #f97e52);
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      background: white;
+      padding: 10px 0;
+      border-bottom: 2px solid #f97e52;
+    }
+    .menu button {
+      background: none;
+      border: none;
+      font-weight: bold;
+      color: #f97e52;
+      cursor: pointer;
+    }
+    .menu button.active {
+      border-bottom: 2px solid orange;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    .actions button {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #f97e52;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 20px;
+      color: #f97e52;
+    }
+    .help-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  

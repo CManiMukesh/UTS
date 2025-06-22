@@ -6,12 +6,97 @@
   <title>UTS</title>
   <!-- UTS app clone -->
    <link rel="manifest" href="manifest.json">
+   <link rel="stylesheet" href="style.css">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#ff6f00">
 </head>
-<body>
-  <h1>i</h1>
+<div class="navbar">
+    <h2>UTS</h2>
+    <p>IR UNRESERVED TICKETING</p>
+  </div>
+
+  <div class="menu">
+    <button class="tab-button active" data-tab="journey">Journey Ticket</button>
+    <button class="tab-button" data-tab="qr">QR Booking</button>
+    <button class="tab-button" data-tab="quick">Quick Booking</button>
+    <button class="tab-button" data-tab="platform">Platform Ticket</button>
+    <button class="tab-button" data-tab="season">Season Ticket</button>
+  </div>
+
+  <div class="actions">
+    <button>Cancel Ticket</button>
+    <button>Booking History</button>
+    <button>Show Ticket</button>
+    <button>R Wallet</button>
+    <button>My Profile</button>
+    <button>Transaction Status</button>
+  </div>
+
+  <div class="tab-content active" id="journey">
+    <h3>NORMAL BOOKING</h3>
+    <p>Depart From: <input type="text" placeholder="Station Name"></p>
+    <p>Going To: <input type="text" placeholder="Station Name"></p>
+    <button>NEXT TRAIN</button>
+    <button>GET FARE</button>
+    <p><a href="#">BOOK SUPERFAST SURCHARGE</a></p>
+  </div>
+
+  <div class="tab-content" id="qr">
+    <h3>QR BOOKING</h3>
+    <button>JOURNEY TICKET BY QR</button>
+    <button>PLATFORM TICKET BY QR</button>
+    <button>SUPERFAST TICKET BY QR</button>
+  </div>
+
+  <div class="tab-content" id="quick">
+    <h3>QUICK BOOKING</h3>
+    <button>Book & Travel (Paperless)</button>
+    <button>Book & Print (Paper)</button>
+    <button>NEXT</button>
+  </div>
+
+  <div class="tab-content" id="platform">
+    <h3>PLATFORM TICKET</h3>
+    <p>Station Name / Code: <input type="text"></p>
+    <p>Person(s): <select><option>ONE(1)</option></select></p>
+    <p>Payment Type: <select><option>RWALLET</option></select></p>
+    <p>Total Fare: ₹10.00</p>
+    <p>Wallet Balance: ₹0.00</p>
+    <button>BOOK TICKET</button>
+  </div>
+
+  <div class="tab-content" id="season">
+    <h3>SEASON TICKET</h3>
+    <button>Book & Travel (Paperless)</button>
+    <button>Book & Print (Paper)</button>
+    <button>ISSUE TICKET</button>
+    <button>RENEW TICKET</button>
+  </div>
+
+  <div class="footer">
+    Version: G.17.61(7.40) <br />
+    Centre for Railway Information Systems (CRIS)
+  </div>
+
+  <button class="help-btn">?</button>
+
+  <script>
+    const buttons = document.querySelectorAll(".tab-button");
+    const tabs = document.querySelectorAll(".tab-content");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        tabs.forEach((tab) => tab.classList.remove("active"));
+        const activeTab = document.getElementById(btn.dataset.tab);
+        activeTab.classList.add("active");
+      });
+    });
+  </script>
+</body>
 </body>
 </html>
