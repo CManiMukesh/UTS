@@ -2,7 +2,7 @@
   "name": "UTS",
   "short_name": "UTS",
   "start_url": "index.html",
-  "display": "browser",
+  "display": "standalone",
   "background_color": "#ff6f00",
   "theme_color": "#ff6f00",
   "icons": [

@@ -65,4 +65,75 @@ body {
       height: 40px;
       font-size: 20px;
     }
-  
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #f85700, #f97e52);
+  color: white;
+  padding: 10px;
+}
+
+.navbar-left h2,
+.navbar-left p {
+  margin: 0;
+  text-align: left;
+}
+
+.navbar-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-icon {
+  background: white;
+  color: #f97e52;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: white;
+  color: #f97e52;
+  border: 1px solid #f97e52;
+  border-radius: 5px;
+  width: 160px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.dropdown.show {
+  display: block;
+}
+
+.dropdown p {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.dropdown button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 10px;
+  color: #f97e52;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown button:hover {
+  background: #fbe4d3;
+}

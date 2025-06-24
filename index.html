@@ -10,12 +10,28 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#ff6f00">
 </head>
 <div class="navbar">
+  <div class="navbar-left">
     <h2>UTS</h2>
     <p>IR UNRESERVED TICKETING</p>
   </div>
+  <div class="navbar-right">
+    <span class="home-icon">HOME</span>
+    <div class="menu-toggle">⋮</div>
+    <div class="dropdown" id="dropdown">
+      <p>Welcome, <span id="username">X</span></p>
+      <p id="usernumber">XXXXXXXXXX</p>
+      <hr />
+      <button>Profile</button>
+      <button>Notification</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
 
   <div class="menu">
     <button class="tab-button active" data-tab="journey">Journey Ticket</button>
@@ -96,6 +112,39 @@
         activeTab.classList.add("active");
       });
     });
+
+  // Toggle 3-dot menu
+  document.querySelector(".menu-toggle").addEventListener("click", () => {
+    document.getElementById("dropdown").classList.toggle("show");
+  });
+
+  // Dummy name and number – update via form later if needed
+  let userName = "MANI";
+  let userNumber = "8610363310";
+
+  document.getElementById("username").innerText = userName;
+  document.getElementById("usernumber").innerText = userNumber;
+
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!document.querySelector(".navbar-right").contains(e.target)) {
+      document.getElementById("dropdown").classList.remove("show");
+    }
+  });
+
+  // function logout() {
+  //   alert("You have been logged out.");
+  //   // Add your logout logic here
+  // }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(function(reg) {
+        console.log("Service Worker Registered!", reg);
+      })
+      .catch(function(err) {
+        console.error("Service Worker Registration Failed:", err);
+      });
+  }
   </script>
 </body>
 </body>
